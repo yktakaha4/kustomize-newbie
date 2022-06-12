@@ -1,6 +1,11 @@
 resources:
 - deployment.yaml
 - service.yaml
+# このような書き方もできる kubectl kustomize --enable-helm .
+# が、kubectl diff -k . には対応しておらずエラーとなる
+# https://github.com/kubernetes-sigs/kustomize/blob/master/examples/chart.md
+# 長期的にはプラグイン的な仕組みで統合されるようなので、現状この構成にするのははやいかも
+# https://github.com/kubernetes-sigs/kustomize/issues/4401
 # helmCharts:
 # - name: minecraft
 #   includeCRDs: false
