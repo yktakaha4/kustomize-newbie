@@ -1,6 +1,7 @@
 resources:
 - deployment.yaml
 - service.yaml
+- sub/
 # このような書き方もできる kubectl kustomize --enable-helm .
 # が、kubectl diff -k . には対応しておらずエラーとなる
 # https://github.com/kubernetes-sigs/kustomize/blob/master/examples/chart.md

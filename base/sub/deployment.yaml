@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sub-nginx
+  namespace: sub
+spec:
+  selector:
+    matchLabels:
+      run: sub-nginx
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        run: sub-nginx
+    spec:
+      containers:
+        - name: sub-nginx
+          image: nginx
+          envFrom:
+          - configMapRef:
+              name: sub-game-config
