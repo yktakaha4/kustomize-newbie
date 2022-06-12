@@ -1,3 +1,4 @@
 bases:
 - ../../base
 namePrefix: dev-
+nameSuffix: "-grasys01"
